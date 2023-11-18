@@ -1,0 +1,103 @@
+{
+    "name": "ESP8266 IoT Framework",
+    "version": "1.11.1",
+    "description": "Framework for IoT projects implementing HTTPS requests, a React web interface, WiFi manager, configuration manager, file manager and OTA updates.",
+    "keywords": "esp8266,react,ota-updates,wifi-manager,https,file-manager",
+    "frameworks": "arduino",
+    "platforms": "espressif8266",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/maakbaas/esp8266-iot-framework.git"
+    },
+    "dependencies":
+    [
+        {
+            "name": "https://github.com/lorol/ESPAsyncWebServer"
+        },
+        {
+            "name": "ArduinoJson"
+        },
+        {
+            "name": "ESP8266WiFi"
+        },
+        {
+            "name": "ESP8266HTTPClient"
+        },
+        {
+            "name": "DNSServer"
+        },
+        {
+            "name": "EEPROM"
+        },
+        {
+            "name": "LittleFS(esp8266)"
+        }
+    ],
+    "build": {
+        "extraScript": "scripts/preBuild.py",
+        "libArchive": false
+    },
+    "examples": [       
+        {
+            "name": "helloWorld",
+            "base": "examples/helloWorld",
+            "files": [
+                "helloWorld.cpp"
+            ]
+        },
+        {
+            "name": "fetch",
+            "base": "examples/fetch",
+            "files": [
+                "fetchExample.cpp"
+            ]
+        },
+        {
+            "name": "configManager",
+            "base": "examples/configManager",
+            "files": [
+                "configManagerExample.cpp"
+            ]
+        },
+        {
+            "name": "timeSync",
+            "base": "examples/timeSync",
+            "files": [
+                "timeSyncExample.cpp"
+            ]
+        },
+        {
+            "name": "dashboard",
+            "base": "examples/dashboard",
+            "files": [
+                "dashboardExample.cpp"
+            ]
+        }
+    ],
+    "export": {
+        "exclude": [
+            "node_modules",
+            ".vscode",
+            "scripts/__pycache__"
+        ],
+        "include": [
+            "*",
+            ".*",
+            "*.*",
+            ".*.*",
+            "src/*.*",
+            "src/generated/*.*",
+            "scripts/*.*",
+            "gui/*.*",
+            "gui/js/*.*",
+            "gui/js/comp/*.*",
+            "gui/js/functions/*.*",
+            "gui/js/lang/*.*",
+            "examples/configManager/*.*",
+            "examples/fetch/*.*",
+            "examples/helloWorld/*.*",
+            "examples/timeSync/*.*",
+            "examples/dashboard/*.*"
+        ]
+    }
+}
